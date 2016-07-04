@@ -45,6 +45,7 @@ class simpleadder_scoreboard extends uvm_scoreboard;
 	endtask: run
 
 	virtual function void compare();
+			`uvm_error("compare", {"Test: Fail!"});
 		if(transaction_before.out == transaction_after.out) begin
 			`uvm_info("compare", {"Test: OK!"}, UVM_LOW);
 		end else begin
